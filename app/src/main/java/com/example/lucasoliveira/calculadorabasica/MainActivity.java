@@ -2,7 +2,6 @@ package com.example.lucasoliveira.calculadorabasica;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,25 +9,34 @@ import android.widget.*; //usada para manipular componentes
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText vlr1 = (EditText)findViewById(R.id.txtVlr1);
-    private EditText vlr2 = (EditText)findViewById(R.id.txtVlr2);
-    private EditText vlrresult = (EditText)findViewById(R.id.txtResult);
+    private EditText vlr1;
+    private EditText vlr2;
+    private EditText vlrresult;
 
-    private Button somar = (Button)findViewById(R.id.btnSoma);
-    private Button dividir = (Button)findViewById(R.id.btnDividir);;
-    private Button multiplicar = (Button)findViewById(R.id.btnMultiplica);;
-    private Button subtrair = (Button)findViewById(R.id.btnSubtracao);;
+    private Button somar;
+    private Button dividir;
+    private Button multiplicar;
+    private Button subtrair;
 
     private double num1 = 0;
     private double num2 = 0;
-    private double result = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        vlr1 = (EditText)findViewById(R.id.txtVlr1);
+        vlr2 = (EditText)findViewById(R.id.txtVlr2);
+        vlrresult = (EditText)findViewById(R.id.txtResult);
+
+        somar = (Button)findViewById(R.id.btnSoma);
+        dividir = (Button)findViewById(R.id.btnDividir);
+        multiplicar = (Button)findViewById(R.id.btnMultiplica);
+        subtrair = (Button)findViewById(R.id.btnSubtracao);
+
+        num1 = 0;
+        num2 = 0;
 
         //Soma
         somar.setOnClickListener(new View.OnClickListener() {
